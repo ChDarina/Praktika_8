@@ -102,12 +102,11 @@ namespace praktika_8
                     Console.Write(matrix[i, j].ToString() + " ");
                 Console.WriteLine();
             }
-            for (int i = 0; i < PeekNum; i++)
+            for (int i = 0; i < PeekNum; i++, degree = 0)
             {
                 for (int j = 0; j < count; j++)
                     degree += matrix[j, i];
                 if (k < degree) k = degree;
-                degree = 0;
             }
             using (FileStream sf = new FileStream("output.txt", FileMode.OpenOrCreate)) { }
             using (StreamWriter writer = new StreamWriter("output.txt"))
