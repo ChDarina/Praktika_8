@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -94,7 +93,6 @@ namespace praktika_8
         static void Main(string[] args)
         {
             int count = 0, PeekNum = 0, k = 2, degree=0;
-            bool full = false;
             int[,] matrix = null;
             matrix = ReadfromFile(ref count, ref PeekNum);
             Console.WriteLine("INPUT.TXT\n");
@@ -104,12 +102,10 @@ namespace praktika_8
                     Console.Write(matrix[i, j].ToString() + " ");
                 Console.WriteLine();
             }
-            int[] degreemas = new int[PeekNum];
             for (int i = 0; i < PeekNum; i++)
             {
                 for (int j = 0; j < count; j++)
                     degree += matrix[j, i];
-                degreemas[i] = degree;
                 if (k < degree) k = degree;
                 degree = 0;
             }
